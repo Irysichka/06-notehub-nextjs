@@ -5,15 +5,15 @@ import css from "./Notesclient.module.css";
 import {
   useQuery,
   keepPreviousData,
-  useQueryClient,
+  // useQueryClient,
 } from "@tanstack/react-query";
 import { fetchNotes } from "@/lib/api";
 
-import NoteList from "@/components/NoteList/page";
-import Pagination from "@/components/Pagination/page";
-import Modal from "@/components/Modal/page";
+import NoteList from "@/components/NoteList/NoteList";
+import Pagination from "@/components/Pagination/Pagination";
+import Modal from "@/components/Modal/Modal";
 import SearchBox from "@/components/SearchBox/page";
-import NoteForm from "@/components/NoteForm/page";
+import NoteForm from "@/components/NoteForm/NoteForm";
 
 export default function NotesClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,7 +22,7 @@ export default function NotesClient() {
   const [search, setSearch] = useState("");
 
   const perPage = 8;
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
 
   const { data, isLoading} = useQuery({
     queryKey: ["notes", currentPage, perPage, search],
